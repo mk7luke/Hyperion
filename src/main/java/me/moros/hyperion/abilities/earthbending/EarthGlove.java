@@ -310,9 +310,13 @@ public class EarthGlove extends EarthAbility implements AddonAbility {
 	}
 
 	public static String getCooldownForSide(Side s) {
-		return switch (s) {
-			case LEFT -> "EarthGloveLeft";
-			case RIGHT -> "EarthGloveRight";
-		};
+	    if (s == null) {
+	        return "Unknown Side";
+	    }
+	    return switch (s) {
+	        case LEFT -> "EarthGloveLeft";
+	        case RIGHT -> "EarthGloveRight";
+	    };
 	}
+	
 }
